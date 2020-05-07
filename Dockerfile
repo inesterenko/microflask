@@ -4,4 +4,4 @@ RUN pip install -r /requirements.txt
 COPY . /app
 WORKDIR /app
 ENV FLASK_APP=microblog.py
-CMD ["flask", "run"]
+CMD ["flask", "run", "--host=0.0.0.0"]
