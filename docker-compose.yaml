@@ -1,0 +1,19 @@
+version: "2.1"
+
+services:
+   microflask:
+        container_name: microflask-local
+        image: ballian/microflask
+        build:
+          context: ./
+          dockerfile: ./Dockerfile
+        image: ballian/microflask:${TAG}
+        ports:
+            - 127.0.0.1:80:5000
+        # user: "1000:1000"
+        # environment:
+        #     DEBUG: 'true'
+        volumes:
+            - "./:/app"
+        entrypoint: ["flask"]
+        command: ["run", "--host=0.0.0.0"]
