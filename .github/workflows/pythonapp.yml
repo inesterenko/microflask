@@ -11,15 +11,15 @@ on:
 
 jobs:
   run_tests:
-    runs-on: ubuntu-latest
-    steps:      
-    - uses: octokit/request-action@v2.x
-      id: update_check_run
-      with:
-          route: PUT /api/v4/projects/:repository/repository/files/repo-ivan%2Eyaml
-          repository: 31
-          data: '{"branch": "dev", "content": "repository: ballian/microflask:${{ github.sha }}", "commit_message": "change"}'
-          conclusion: "success"
-          status: "completed"
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: echo
+        # Сначала мы логинимся в docker.io
+        run:  echo "he he"
+      - name: echo
+        run: |
+          echo "he he: he he"
+      - name: echo
+        run:  >
+          echo "he he: 
+          he he"
