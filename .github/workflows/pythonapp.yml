@@ -50,4 +50,4 @@ jobs:
         uses: wei/curl@v1
         with:
          args: | 
-          --request PUT --header "PRIVATE-TOKEN: ${{ secrets.GITLAB_TOKEN }}" --header "Content-Type: application/json" --data '{"branch": "dev", "content": "repository: ballian/microflask:${{ github.sha }}", "commit_message": "change"}'  'https://gitlab.suitup.fun/api/v4/projects/31/repository/files/repo-ivan%2Eyaml'
+          --request PUT --header "PRIVATE-TOKEN: ${{ secrets.GITLAB_TOKEN }}" --header "Content-Type: application/json" --data '{"branch": "dev", "content": "repository: ballian/microflask:${{ github.sha }}", "commit_message": "change"}'  https://gitlab.suitup.fun/api/v4/projects/31/repository/files/repo-ivan%2Eyaml
